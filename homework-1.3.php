@@ -5,6 +5,14 @@ $multiArray = [
     'Eurasia' => ['Tamias sibiricus', 'Mus spicilegus', 'Talpa caucasica', 'Bison', 'Castor fiber']
 ];
 
+$twoWordsArrays = [];
 
+foreach ($multiArray as $continent => $animal) {
+    foreach ($animal as $animalName) {
+        if (substr_count ($animalName, ' ') > 0) {
+        	$twoWordsArrays[] = $animalName;
+        }
+    }
+}
 
 ?>
