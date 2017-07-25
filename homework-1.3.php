@@ -9,7 +9,7 @@ $twoWordsArray = [];
 
 foreach ($multiArrays as $continent => $animal) {
     foreach ($animal as $animalName) {
-        if (substr_count ($animalName, ' ') === 1) {
+        if (substr_count($animalName, ' ') === 1) {
         	$twoWordsArray[] = $animalName;
         }
     }
@@ -18,12 +18,11 @@ foreach ($multiArrays as $continent => $animal) {
 $twoWordsArrayShuffle = $twoWordsArray;
 shuffle($twoWordsArrayShuffle);
 
-$i = 0;
+
 foreach ($twoWordsArray as $key => $value) {
 	$itemstwoWordsArray = explode(' ', $value);
 	$itemsArrayShuffle = explode(' ', $twoWordsArrayShuffle[$key]);
 	$twoWordsArray[$key] = str_replace($itemstwoWordsArray[1], $itemsArrayShuffle[1], $value);	
-	$i++;
 }
 
 foreach ($multiArrays as $continent => $animal) {
@@ -37,7 +36,7 @@ foreach ($multiArrays as $continent => $animal) {
 	$outputArray = [];
 	foreach ($twoWordsArray as $twoWordsArrayItem) {
 		foreach ($animal as $animalName) {			
-	        if (substr_count ($animalName, substr($twoWordsArrayItem, 0, strpos($twoWordsArrayItem, ' ') - 1)) > 0) {
+	        if (substr_count($animalName, substr($twoWordsArrayItem, 0, strpos($twoWordsArrayItem, ' ') - 1)) > 0) {
 	        	$outputArray [] = $twoWordsArrayItem;
 	        }
 	    }		
